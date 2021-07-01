@@ -1,0 +1,7 @@
+{
+    "clients": [
+        {
+            "public": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj3esh+8vIdSIb44d0yGB\nWDwOgQDAUqbZbSUkS7ho9OP3ptopmqw20Bc37RfKAqEjqY88kzl011BWw/MB/u0w\n5f5ps8VH/lqFE/WeUWbuYZGi7w5dcGrUmiDYOPyz4B7GlYFUwkkiaduIFIRwO36/\n+Vw9oC4cXpyxjJfFgVWLyhvCwuTOSy8E+LgZVNreIGeK0x1Cg3H3n2tR9I/ZmdWp\noVqQS3w7AxcSwz8g+KekLEVwFjuoWEu2z0KHrgLoyI4ksDJI6pCI+PjhQydcLhST\nvSJCSBe+qleaecxrLR3P8Xs5HLYu3Mc4Sssdu+/3bBbUKufnxaTX6Rkp+SfxwGyK\nrwIDAQAB\n-----END PUBLIC KEY-----\n"
+        }
+    ]
+}

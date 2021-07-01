@@ -1,0 +1,422 @@
+<!doctype html>
+<html>
+<head>
+    <title>ISS HomeWork</title>
+    <link id="boo" rel="stylesheet" type="text/css" href="/css/bootstrap.min.css"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+</head>
+<body>
+<div class="container">
+ 
+    
+
+
+    <div class="card">
+        <div class="card-header">
+         Use our secure text view or edit
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <label >file name</label>
+            <input type="text" id="fileName" class="form-control" placeholder="Enter the file name">
+            <label >action</label >
+            <input type="text" id="action" class="form-control" placeholder="Enter the action">
+            <label>new Text</label>
+            <input type="text" id="newText" class="form-control" placeholder="Enter the new text">
+            <button id="button" class="btn btn-primary" style="margin-top: 10px;">submit</button>
+            <footer class="blockquote-footer">Mohamed Taha-Eyad Abukm-Mohamd Aboazan-Omar Alkadi <cite title="Source Title">@2020</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+
+
+    
+    <div class="text-container" style="display: none;">
+        <h2>Server public key</h2>
+        <textarea id="server_public">
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnPQ6+vqnIwpYLNmM0DvP
+jWYoaZHV6rW4HcofqyjUO8rzQSEmfgT+quTzPsNcnAqHVC7IGafomu8Y82wX6JPK
+YZHn+st8ZoehILgZSBM6y1QIVXdBnQct+R3/o1Gc7TMMYVjk+UrFT7PHou7AwmTM
+TRiS/ZvSRVoSXs3AxMCUn1V83FP68yKMDq2I82WOESoAWqGuYmsIxk2EXVaGBtjM
+wRIs2EzWz8ITfmOczl+QAH31SDCSIJxWbkEHopzHJnEW99p7I3P1cr17JEKGhWO1
+nx2Wq6X4OC6Y5MaB64MzspDTND5gzwPNTibcw3s/59o+FV22drhCwylUxuWUhakP
+LQIDAQAB
+-----END PUBLIC KEY-----
+</textarea>
+    </div>
+
+    <div class="text-container" style="display: none;">
+        <h2>Client public key</h2>
+
+        <textarea id="client_public">
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAj3esh+8vIdSIb44d0yGB
+WDwOgQDAUqbZbSUkS7ho9OP3ptopmqw20Bc37RfKAqEjqY88kzl011BWw/MB/u0w
+5f5ps8VH/lqFE/WeUWbuYZGi7w5dcGrUmiDYOPyz4B7GlYFUwkkiaduIFIRwO36/
++Vw9oC4cXpyxjJfFgVWLyhvCwuTOSy8E+LgZVNreIGeK0x1Cg3H3n2tR9I/ZmdWp
+oVqQS3w7AxcSwz8g+KekLEVwFjuoWEu2z0KHrgLoyI4ksDJI6pCI+PjhQydcLhST
+vSJCSBe+qleaecxrLR3P8Xs5HLYu3Mc4Sssdu+/3bBbUKufnxaTX6Rkp+SfxwGyK
+rwIDAQAB
+-----END PUBLIC KEY-----
+</textarea>
+    </div>
+
+    <div  class="text-container" style="display: none;">
+        <h2>Client private key</h2>
+
+        <textarea id="client_private">
+-----BEGIN PRIVATE KEY-----
+MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCPd6yH7y8h1Ihv
+jh3TIYFYPA6BAMBSptltJSRLuGj04/em2imarDbQFzftF8oCoSOpjzyTOXTXUFbD
+8wH+7TDl/mmzxUf+WoUT9Z5RZu5hkaLvDl1watSaINg4/LPgHsaVgVTCSSJp24gU
+hHA7fr/5XD2gLhxenLGMl8WBVYvKG8LC5M5LLwT4uBlU2t4gZ4rTHUKDcfefa1H0
+j9mZ1amhWpBLfDsDFxLDPyD4p6QsRXAWO6hYS7bPQoeuAujIjiSwMkjqkIj4+OFD
+J1wuFJO9IkJIF76qV5p5zGstHc/xezkcti7cxzhKyx277/dsFtQq5+fFpNfpGSn5
+J/HAbIqvAgMBAAECggEASEcZY65rh1akmdb2TZzOph4zjGhNfBZU6bjRjVhNgDqt
+VKEKXsMuJi3cXhUjD6oQ5makNOO4apUt8TAnLEBg5y4CILBeMdV2v/R5GzeJFxyh
+AmCxUGZxz2iGpkchc+LtVvq+MddYgA46g2Opiz+zBbSj02QHpN66UENSHHN1po8K
+y9yNcXBxta3fwRS0g/ARLxbGnkKBhOxraV6UwOcjRFDAO6aC25KyP59JAM0SxmnO
+G1sIDwiYz8lfM1D5ydffWAKGCU7ZBkrVDM4yumSpqEwCMTTcnEjTbQ8ZDYSz1vZZ
+haVGzcgUrPtB9SGOgt9GbVrr0CMrSkEH9QVoPuVlGQKBgQDqYk+N92CZZ22pQ8te
+kz1wyyqcJWrltMHKMLxzbDFzcJoL219XmGAcPG7fk4Qc6zq8E0f/+dfrbNyCUBEf
+Zxal0t70QJWhCTxdQnLCTqLn1sdMr5POkVjEnF04kwacqolmNVC50H6sW2ilzzQn
+CzjwoTzfGWoyLWU5YZXCfXXEXQKBgQCcst57Qyz/Sa6SaFjHzVQeDc9TqtVo9niu
+H6DUTnCgM57mvBeYsedet359NJ3ET0vQT5RRAkPRBqgezxNb3OAa/dhV1glvArHr
+7UPsAH6Yp98taYFHomqivR8CXq9AxV2EcAwIHBYJR21U6g/7XGUEExz2tQ+AzrBd
+IFVo9CDaewKBgAMLIcNTKgLz792ZzsM8oDidusDqT3gKH9YTSe8pwX6hQK7Uu2k0
+xlK3ii0HClkhyNJ2YaH2SZJ6CGb8ySwiN44Rrel4CTldGFaRrVHOmZjvFglt4jp1
+crSi3ycD6bsRD9Wu7YxsI6jzSumURjYXlDazsUmoV9Os+TqEhOBQpr3VAoGAHBRx
+ieUfyx+JCPNp9WP2DuyqmnOiioygU5OXXnQv+oVFlFNgZxx6OZ7oK8eh/eu3yjx4
+d4vQW0S2G88/yNZr0mpqufcA+cOh3oVGBqSQCwsKEzk00YFpWoBJbkNJZHH5sCHk
+BhACYudJ0E2hT4nfEDvclNkdThe7wvRoWcZlnMECgYBDSLnDeyduLhvctgcJUU9F
+QdqFYAWjzXFfJItUGWAGFC7Lpn8PVcc7u6hH1oFJlohi39T2gYrKB5PmYN9/52/r
+u8ThbAvTm+yqMmsDNkBkohfx25p3NLsV0r46mpRXuraQTFXcYrc1mW+BkoteY06S
+Oe6lSHTplzRc0QPTat5+mQ==
+-----END PRIVATE KEY-----
+</textarea>
+    </div>
+    <div style="clear: both"></div>
+</div>
+
+<texaria id="session_key" style="display: none">
+     -----BEGIN PUBLIC KEY-----
+    MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCPd6yH7y8h1Ihv
+    jh3TIYFYPA6BAMBSptltJSRLuGj04/em2imarDbQFzftF8oCoSOpjzyTOXTXUFbD
+    8wH+7TDl/mmzxUf+WoUT9Z5RZu5hkaLvDl1watSaINg4/LPgHsaVgVTCSSJp24gU
+    hHA7fr/5XD2gLhxenLGMl8WBVYvKG8LC5M5LLwT4uBlU2t4gZ4rTHUKDcfefa1H0
+    j9mZ1amhWpBLfDsDFxLDPyD4p6QsRXAWO6hYS7bPQoeuAujIjiSwMkjqkIj4+OFD
+    J1wuFJO9IkJIF76qV5p5zGstHc/xezkcti7cxzhKyx277/dsFtQq5+fFpNfpGSn5
+    J/HAbIqvAgMBAAECggEASEcZY65rh1akmdb2TZzOph4zjGhNfBZU6bjRjVhNgDqt
+    VKEKXsMuJi3cXhUjD6oQ5makNOO4apUt8TAnLEBg5y4CILBeMdV2v/R5GzeJFxyh
+    AmCxUGZxz2iGpkchc+LtVvq+MddYgA46g2Opiz+zBbSj02QHpN66UENSHHN1po8K
+    y9yNcXBxta3fwRS0g/ARLxbGnkKBhOxraV6UwOcjRFDAO6aC25KyP59JAM0SxmnO
+    G1sIDwiYz8lfM1D5ydffWAKGCU7ZBkrVDM4yumSpqEwCMTTcnEjTbQ8ZDYSz1vZZ
+    haVGzcgUrPtB9SGOgt9GbVrr0CMrSkEH9QVoPuVlGQKBgQDqYk+N92CZZ22pQ8te
+    kz1wyyqcJWrltMHKMLxzbDFzcJoL219XmGAcPG7fk4Qc6zq8E0f/+dfrbNyCUBEf
+    Zxal0t70QJWhCTxdQnLCTqLn1sdMr5POkVjEnF04kwacqolmNVC50H6sW2ilzzQn
+    CzjwoTzfGWoyLWU5YZXCfXXEXQKBgQCcst57Qyz/Sa6SaFjHzVQeDc9TqtVo9niu
+    H6DUTnCgM57mvBeYsedet359NJ3ET0vQT5RRAkPRBqgezxNb3OAa/dhV1glvArHr
+    7UPsAH6Yp98taYFHomqivR8CXq9AxV2EcAwIHBYJR21U6g/7XGUEExz2tQ+AzrBd
+    IFVo9CDaewKBgAMLIcNTKgLz792ZzsM8oDidusDqT3gKH9YTSe8pwX6hQK7Uu2k0
+    xlK3ii0HClkhyNJ2YaH2SZJ6CGb8ySwiN44Rrel4CTldGFaRrVHOmZjvFglt4jp1
+    crSi3ycD6bsRD9Wu7YxsI6jzSumURjYXlDazsUmoV9Os+TqEhOBQpr3VAoGAHBRx
+    ieUfyx+JCPNp9WP2DuyqmnOiioygU5OXXnQv+oVFlFNgZxx6OZ7oK8eh/eu3yjx4
+    d4vQW0S2G88/yNZr0mpqufcA+cOh3oVGBqSQCwsKEzk00YFpWoBJbkNJZHH5sCHk
+    BhACYudJ0E2hT4nfEDvclNkdThe7wvRoWcZlnMECgYBDSLnDeyduLhvctgcJUU9F
+    QdqFYAWjzXFfJItUGWAGFC7Lpn8PVcc7u6hH1oFJlohi39T2gYrKB5PmYN9/52/r
+    u8ThbAvTm+yqMmsDNkBkohfx25p3NLsV0r46mpRXuraQTFXcYrc1mW+BkoteY06S
+    Oe6lSHTplzRc0QPTat5+mQ==
+    -----END PUBLIC KEY-----
+</texaria>
+
+<texaria id="client_cert" style="display: none">
+    -----BEGIN CERTIFICATE-----
+    MIIDETCCAfkCFGP6YTTI51VFWSOWBcdr38aRGFbPMA0GCSqGSIb3DQEBCwUAMEUx
+    CzAJBgNVBAYTAnN5MRMwEQYDVQQIDApTb21lLVN0YXRlMSEwHwYDVQQKDBhJbnRl
+    cm5ldCBXaWRnaXRzIFB0eSBMdGQwHhcNMjAxMjE3MDYzNzU1WhcNMjExMjE3MDYz
+    NzU1WjBFMQswCQYDVQQGEwJzeTETMBEGA1UECAwKU29tZS1TdGF0ZTEhMB8GA1UE
+    CgwYSW50ZXJuZXQgV2lkZ2l0cyBQdHkgTHRkMIIBIjANBgkqhkiG9w0BAQEFAAOC
+    AQ8AMIIBCgKCAQEAj3esh+8vIdSIb44d0yGBWDwOgQDAUqbZbSUkS7ho9OP3ptop
+    mqw20Bc37RfKAqEjqY88kzl011BWw/MB/u0w5f5ps8VH/lqFE/WeUWbuYZGi7w5d
+    cGrUmiDYOPyz4B7GlYFUwkkiaduIFIRwO36/+Vw9oC4cXpyxjJfFgVWLyhvCwuTO
+    Sy8E+LgZVNreIGeK0x1Cg3H3n2tR9I/ZmdWpoVqQS3w7AxcSwz8g+KekLEVwFjuo
+    WEu2z0KHrgLoyI4ksDJI6pCI+PjhQydcLhSTvSJCSBe+qleaecxrLR3P8Xs5HLYu
+    3Mc4Sssdu+/3bBbUKufnxaTX6Rkp+SfxwGyKrwIDAQABMA0GCSqGSIb3DQEBCwUA
+    A4IBAQBGvBoYb0PHT1NDHsRaCHMlsKj7ZpikCPW573ib6rNjO8t3suo0nYymv17q
+    LVPYYlRTSSDGm1MFqs6a9KbT9uNqkI0V9nAxQBDaYeymIkWBiiKg0iLcZrCRDXIx
+    PVqdrfnhM52WM7Z31Ki2RZH+/D4VnT99F47oEZyi1MwK+jUWQgE3saSjt2akhznr
+    QexciSOVtgIv4BdOC5BfnbPw6x0rP6vH0C+yeJURFhwbI7W+vCMtXzMHyhzG7Pev
+    0CDbS5aevMBg7e7xBPuU6A2ImvgtjeYMgqMOtZgWuycrCYRX335Euz8BLIFKbxEI
+    21kf7+CjHv6DkjRsQ40+3OS/66MW
+    -----END CERTIFICATE-----
+    
+</texaria>
+
+
+<div class="log-container">
+    <!-- <h1>Log container</h1> -->
+    <div id="log" style="padding-top: 20px"></div>
+</div>
+
+
+   <!-- start wrong modal-->
+   <div id="myModal" class="modal fade in" >
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content ">
+            <div class="modal-header  ">
+                <div class="icon-box" style="margin: auto">
+                    <i class="material-icons"></i>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body text-center">
+                <h4 id="modalHeader">good!</h4>	
+                <p id="modalData">Server Accepted Session key</p>
+                <button class="btn btn-success" data-dismiss="modal" data-target="#modalStudent" data-toggle="modal">ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end wrong modal -->
+ <script src="/js/jquery.min.js"></script> 
+ <script src="/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/encoding.js"></script>
+<script src="/js/encoding-indexes.js"></script>
+<script src="/js/converter-wrapper.js"></script>
+<script src="/js/rsa-wrapper.js"></script>
+<script src="/js/aes-wrapper.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/crypto-js@3.1.9-1/crypto-js.js"></script>
+<script>
+
+    var socket = io();
+    var aesKey;
+    var sessionKey;
+    var button = document.getElementById('button');
+    var fileName = document.getElementById('fileName');
+    var action = document.getElementById('action');
+    var newText = document.getElementById('newText');
+button.onclick = function () {
+    var obj = {
+        fileName : fileName.value,
+        action : action.value,
+        newText : newText.value
+    }
+    var obj2 = {
+        fileName : fileName.value,
+        action : action.value,
+        newText : newText.value
+    }
+    sessionKey = document.getElementById('server_public').value;
+   
+
+    // // encrypting  AES data from client to server
+    aesWrapper.encryptMessage(aesKey, obj.fileName).then(function (encrypted1) {
+        aesWrapper.encryptMessage(aesKey, obj.action).then(function (encrypted2) {
+            aesWrapper.encryptMessage(aesKey, obj.newText).then(function (encrypted3) {
+                obj.fileName = encrypted1;
+                obj.action = encrypted2;
+                obj.newText = encrypted3;
+            socket.emit('get action from client with AES', obj);
+            });
+        });
+    });
+
+    //encrypting  RSA using session_key data from client to server
+    rsaWrapper.publicEncrypt(sessionKey,obj2.fileName ).then(function (encrypted11) {
+        rsaWrapper.publicEncrypt(sessionKey,obj2.action ).then(function (encrypted22) {
+            rsaWrapper.publicEncrypt(sessionKey,obj2.newText ).then(function (encrypted33) {
+                obj2.fileName = encrypted11;
+                obj2.action = encrypted22;
+                obj2.newText = encrypted33;
+            socket.emit('get action from client with RSA', obj2);
+    }); 
+    }); 
+    });       
+      
+
+    
+}
+
+
+//generate session key and send to server
+ sessionKey = document.getElementById('server_public').textContent;
+sessionKey = makeid(32);
+ rsaWrapper.publicEncrypt(document.getElementById('server_public').value,sessionKey).then(function (encryptedSessionKey) {
+    socket.emit('session key', encryptedSessionKey); 
+     });
+     var crypto = window.crypto.subtle;
+socket.on('accepted session key', function (msg) {
+//     const isVerified = crypto.verify(
+// 	"sha256",
+	
+	
+// 		 document.getElementById('server_public').value,
+// 		 crypto.subtle.constants.RSA_PKCS1_PSS_PADDING,
+
+// 	msg.signature
+// )
+// const isVerified =  window.crypto.subtle.verify(
+//     "RSA_PKCS1_PSS_PADDING",
+//     document.getElementById('server_public').value,
+//     msg.signature,
+//     "sha256"
+//   );
+console.log(verifyMessage(document.getElementById('server_public').value,msg.data,msg.signature));
+async function verifyMessage(publicKey,message,signatureValue) {
+		// const signatureValue = document.querySelector(
+		// 	".rsassa-pkcs1 .signature-value"
+		// );
+		// signatureValue.classList.remove("valid", "invalid");
+
+        // let encoded = getMessageEncoding();
+        let encoded = new TextEncoder();
+		return encoded.encode(message);
+		let result = await window.crypto.subtle.verify(
+			"RSASSA-PKCS1-v1_5",
+			publicKey,
+			signatureValue,
+			encoded
+		);
+
+        // signatureValue.classList.add(result ? "valid" : "invalid");
+        return result;
+	}
+
+// alert("server accepted seestion key");
+$("#myModal").modal("show"); 
+            setTimeout(() => {
+            $("#myModal").modal("hide"); 
+          }, 1500);
+});
+
+
+
+
+
+
+
+
+
+
+
+//get encrypted AES text from server
+socket.on('send AES text to client', function (msg){
+ 
+ aesWrapper.decryptMessage(aesKey, msg.data).then(function (dec1) {
+    aesWrapper.decryptMessage(aesKey, msg.type).then(function (dec2) {
+        // newText.value = dec1;
+//alert(dec2);
+document.getElementById('modalData').textContent = dec2;
+$("#myModal").modal("show"); 
+            setTimeout(() => {
+            $("#myModal").modal("hide"); 
+          }, 1200);
+          setTimeout(() => {
+                document.getElementById('modalHeader').textContent = "File Content";
+                document.getElementById('modalData').textContent = dec1;
+            $("#myModal").modal("show");   
+            }, 1700);
+        }); 
+        });
+
+
+});
+
+//get encrypted RSA text from server
+socket.on('send RSA text to client', function (msg){
+    sessionKey = document.getElementById('client_private').value;
+   
+rsaWrapper.privateDecrypt(sessionKey, msg.data).then(function (decrypted1) {
+    rsaWrapper.privateDecrypt(sessionKey, msg.type).then(function (decrypted2) {
+        // newText.value = decrypted1;
+        document.getElementById('modalHeader').textContent = "Type of the file";
+        document.getElementById('modalData').textContent = decrypted2;
+$("#myModal").modal("show"); 
+            setTimeout(() => {
+            $("#myModal").modal("hide"); 
+          }, 1200);
+          setTimeout(() => {
+                document.getElementById('modalHeader').textContent = "File Content";
+                document.getElementById('modalData').textContent = decrypted1;
+            $("#myModal").modal("show");   
+            }, 1700);
+});
+    });
+     
+
+
+});
+
+if(document.getElementById('server_public').value==""){
+//send public key to server
+socket.emit('send public key to server', document.getElementById('client_public').value);
+//recive public key from server
+socket.on('send public key to client', function (msg) {
+    document.getElementById('server_public').value = msg;
+});
+}
+
+
+
+
+
+    // Test accepting and sending dummy message encrypted with RSA
+    socket.on('rsa server encrypted message', function (msg) {
+
+
+      
+    });
+
+    // Test accepting RSA encrypted AES key and sending AES encrypted message to server
+    socket.on('send key from server to client', function (data) {
+       
+        rsaWrapper.privateDecrypt(document.getElementById('client_private').value, data).then(function (key) {
+           // addLog('Decrypted AES key from server in base64 format', key);
+            aesKey = key;
+
+           
+        });
+    });
+server_public = localStorage.getItem("server_public");
+
+// send request to get csr
+socket.emit('csr', "");
+
+//get server certificate
+socket.on('server certifcate', function (data) {
+       
+      //verfiy certificate
+     if(data.signcert.publicKey == server_public){
+         alert("certifcate accepted");
+     }
+     
+   });
+
+   //get client certificate From CA
+socket.on('get client certifcate', function (data) {
+       
+     //send certifcate form client to server
+     socket.emit('get client certifcate', data);
+      
+    });
+
+
+
+    
+    function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+</script>
+</body>
+</html>
